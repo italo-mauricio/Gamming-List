@@ -1,5 +1,7 @@
 package com.italo.gamminglist.entities;
 
+import java.util.Objects;
+
 public class Game {
     private Long id;
     private String title;
@@ -89,4 +91,22 @@ public class Game {
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (this == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Game other = (Game) obj;
+        return Objects.equals(id, other.id);
+    }
+
+
 }
