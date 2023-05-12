@@ -1,6 +1,6 @@
 package com.italo.gamminglist.controllers;
 
-import com.italo.gamminglist.entities.Game;
+import com.italo.gamminglist.dto.GameMinDTO;
 import com.italo.gamminglist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +17,8 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping
-    public List<Game> findAll(){
-        List<Game> result = gameService.findAll();
+    public List<GameMinDTO> findAll(){
+        List<GameMinDTO> result = gameService.findAll();
         return result;
     }
 }
