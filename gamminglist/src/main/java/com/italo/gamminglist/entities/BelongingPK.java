@@ -1,10 +1,11 @@
 package com.italo.gamminglist.entities;
 
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.util.Objects;
-
+@Embeddable
 public class BelongingPK {
     @ManyToOne
     @JoinColumn(name = "game_id")
